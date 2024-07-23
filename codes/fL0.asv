@@ -1,0 +1,24 @@
+function [f] = fL0(x,N)
+
+%improved.sigmoid
+%f_i=1-2./(1+exp(abs(x(1:N,1))/0.1^2));
+f_i=1-2./(1+exp((x(1:N,1)+x(N:N,1)/0.1^2));
+
+
+%symmetric.CT
+%f_i = sin(atan(x(1:N,1).^2/0.01^2));
+
+%Sum.inv.Gaussian
+%f_i = 1-exp(-(x.^2)./(2*0.1^2));
+
+%inv.Laplacian
+% f_i = 1-exp(-abs(x)/0.1);
+
+%inv.func
+% f_i = x.^2./(x.^2+0.1^2);
+
+%inv.hyper
+% f_i = 1-2*(exp(-x.^2/0.1^2)+exp(x.^2/0.1^2)).^(-1);
+
+
+f=sum(f_i);
